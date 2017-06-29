@@ -6,6 +6,13 @@ import time
 import subprocess
 import sys
 
+
+def get_files():
+    files
+    for item in sys.argv[1:]:
+        files.append(os.path.abspath(item)
+    return files
+"""
 if len(sys.argv) > 1:
     global filename
     global filepath
@@ -13,7 +20,7 @@ if len(sys.argv) > 1:
     filepath = os.path.abspath(filename)
 else:
     print "You must provide a file name to watch as an argument."
-    sys.exit()
+    sys.exit()"""
     
 #reset watched file and its hash value to None.
 def reset():
