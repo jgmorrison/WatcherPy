@@ -8,7 +8,7 @@ import sys
 
 
 def get_files():
-    files
+    files = []
     for item in sys.argv[1:]:
         files.append(os.path.abspath(item)
     return files
@@ -56,10 +56,11 @@ def reopen(file):
 #start the application
 def start():
     reset()
-    print "started watching file {}".format(filepath)
-    update(filepath)
+    file_list = get_files()
+    print "started watching file {}".format(file_list[0])
+    update(file_list[0])
     while True:
-        check(filepath)
+        check(file_list[0])
         #1 second delay between checking hash values.
         time.sleep(1)
     
