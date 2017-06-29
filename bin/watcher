@@ -37,8 +37,6 @@ def check(file):
     #if hash values differ update watched file hash and reopen file.
     if hashval_new != hashval_current:
         reopen(file)
-        subprocess.call(["open", filepath, "--background", "--fresh"])
-        update(file)
 
 #reopen the file
 def reopen(file):

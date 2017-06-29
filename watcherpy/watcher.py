@@ -7,8 +7,8 @@ import subprocess
 import sys
 
 if len(sys.argv) > 1:
-    global filename 
-    global filepath 
+    global filename
+    global filepath
     filename = sys.argv[1]
     filepath = os.path.abspath(filename)
 else:
@@ -37,8 +37,6 @@ def check(file):
     #if hash values differ update watched file hash and reopen file.
     if hashval_new != hashval_current:
         reopen(file)
-        subprocess.call(["open", filepath, "--background", "--fresh"])
-        update(file)
 
 #reopen the file
 def reopen(file):
