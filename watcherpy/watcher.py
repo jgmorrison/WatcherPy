@@ -10,57 +10,58 @@ import sys
 def get_files():
     files = []
     for item in sys.argv[1:]:
-        files.append(os.path.abspath(item)
+        files.append(os.path.abspath(item))
     return files
-"""
-if len(sys.argv) > 1:
-    global filename
-    global filepath
-    filename = sys.argv[1]
-    filepath = os.path.abspath(filename)
-else:
-    print "You must provide a file name to watch as an argument."
-    sys.exit()"""
-    
+
 #reset watched file and its hash value to None.
 def reset():
-    global watched_file
-    global hashval_current
-    watched_file = None
-    hashval_current = None
+    global html_file
+    global html_hashval
+    global css_file
+    global css_hashval
+    html_file = None
+    html_hashval = None
+    css_file = None
+    css_hashval = None
 
 #update watched file and its hash value.
-def update(file):
-    global watched_file
-    global hashval_current
-    watched_file = open(file, "r")
-    hashval_current = hashlib.md5(watched_file.read()).digest()
+def update(files):
+    global html_file
+    global html_hashval
+    global css_file
+    global css_hashval
+    html_file = open(files[0], "r")
+    css_file = open(files[1], "r")
+    html_hashval = hashlib.md5(html_file.read()).digest()
+    css_hashval = hashlib.md5(css_file.read()).digest()
 
 #Check if wathced file hash has changed by opening and rehashing.
-def check(file):
-    file_new = open(file, "r")
-    hashval_new = hashlib.md5(file_new.read()).digest()
-
+def check(files):
+    html_new = open(files[0], "r")
+    html_hashval_new = hashlib.md5(html_new.read()).digest()
+    css_new = open(files[1], "r")
+    css_hashval_new = hashlib.md5(css_new.read()).digest()
+    
     #if hash values differ update watched file hash and reopen file.
-    if hashval_new != hashval_current:
-        reopen(file)
+    if html_hashval_new != html_hashval or css_hashval_new != css_hashval:
+        reopen(files)
 
 #reopen the file
-def reopen(file):
+def reopen(files):
     if sys.platform == "win-32":
-        subprocess.call(["start", filepath])
+        subprocess.call(["start", files[0]])
     elif sys.platform == "darwin":
-        subprocess.call(["open", filepath, "--background", "--fresh"])
-    update(file)
+        subprocess.call(["open", files[0], "--background", "--fresh"])
+    update(files)
         
 #start the application
 def start():
     reset()
     file_list = get_files()
-    print "started watching file {}".format(file_list[0])
-    update(file_list[0])
+    print "started watching file(s) {}".format(file_list)
+    update(file_list)
     while True:
-        check(file_list[0])
+        check(file_list)
         #1 second delay between checking hash values.
         time.sleep(1)
     
