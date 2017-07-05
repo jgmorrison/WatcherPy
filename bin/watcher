@@ -2,10 +2,9 @@
 
 import hashlib
 import os
-import time
 import subprocess
 import sys
-
+import time
 
 def get_files():
     files = []
