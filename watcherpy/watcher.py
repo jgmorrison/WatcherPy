@@ -1,5 +1,3 @@
-#! /Users/jmorrison/anaconda2/bin/python
-
 import hashlib
 import os
 import subprocess

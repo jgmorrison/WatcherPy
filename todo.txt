@@ -1,0 +1,19 @@
+*Make compatible with Py2 and Py3
+
+*Rename the app
+
+*Handle error if no files are provided
+
+*Make Setup.py professional
+
+*Pylint
+
+*Create Test
+
+*Distribute to PyPI
+
+*Distribute to Anaconda
+
+*Automate build
+
+*Automate versioning
