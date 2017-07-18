@@ -55,7 +55,7 @@ def reopen(files):
 def start():
     reset()
     file_list = get_files()
-    print("started watching file(s) {}").format(file_list)
+    print("started watching file(s) {}".format(file_list))
     update(file_list)
     while True:
         check(file_list)
