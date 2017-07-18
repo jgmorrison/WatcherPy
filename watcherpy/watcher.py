@@ -29,15 +29,15 @@ def update(files):
     global css_hashval
     html_file = open(files[0], "r")
     css_file = open(files[1], "r")
-    html_hashval = hashlib.md5(html_file.read()).digest()
-    css_hashval = hashlib.md5(css_file.read()).digest()
+    html_hashval = hashlib.md5(html_file.read().encode("utf-8")).digest()
+    css_hashval = hashlib.md5(css_file.read().encode("utf-8")).digest()
 
 #Check if wathced file hash has changed by opening and rehashing.
 def check(files):
     html_new = open(files[0], "r")
-    html_hashval_new = hashlib.md5(html_new.read()).digest()
+    html_hashval_new = hashlib.md5(html_new.read().encode("utf-8")).digest()
     css_new = open(files[1], "r")
-    css_hashval_new = hashlib.md5(css_new.read()).digest()
+    css_hashval_new = hashlib.md5(css_new.read().encode("utf-8")).digest()
     
     #if hash values differ update watched file hash and reopen file.
     if html_hashval_new != html_hashval or css_hashval_new != css_hashval:

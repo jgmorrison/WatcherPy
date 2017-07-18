@@ -1,4 +1,4 @@
-import watcher
+from . import watcher
 
 def main():
 
