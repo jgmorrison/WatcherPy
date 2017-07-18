@@ -13,7 +13,7 @@ setup(
     long_description = long_description,
     author ='John Morrison',
     author_email ='john@johmorrison.io',
-    url = "https://github.com/jgmorrison/eyeon",
+    url = "https://github.com/jgmorrison/eyeOn-py",
     packages = ["eyeon"],
     entry_points = {"console_scripts" : ["eyeon = eyeon.__main__:main"]}
 )
