@@ -67,6 +67,3 @@ def start():
         check(file_list)
         #1 second delay between checking hash values.
         time.sleep(1)
-    
-if __name__=='__main__':
-    start()

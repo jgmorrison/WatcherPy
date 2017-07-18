@@ -2,8 +2,6 @@
 
 *Rename the app
 
-*Handle error if no files are provided
-
 *Make Setup.py professional
 
 *Pylint
