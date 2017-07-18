@@ -1,8 +1,8 @@
-from . import watcher
+from . import eyeon
 
 def main():
 
-    watcher.start()
+    eyeon.start()
 
 if __name__=='__main__':
     main()
