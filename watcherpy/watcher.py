@@ -45,7 +45,7 @@ def check(files):
 
 #reopen the file
 def reopen(files):
-    if sys.platform == "win-32":
+    if sys.platform == "win32":
         subprocess.call(["start", files[0]])
     elif sys.platform == "darwin":
         subprocess.call(["open", files[0], "--background", "--fresh"])
