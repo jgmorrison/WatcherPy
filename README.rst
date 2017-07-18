@@ -5,9 +5,9 @@ A simple CLI program to watch an html file and css for changes and reload the br
 
 **Installation**
 
-Install from PyPI
+Install from PyPI::
 
-    ``pip install watcherpy``
+    pip install watcherpy
 
 Watcherpy is also available on Anaconda.org
 
