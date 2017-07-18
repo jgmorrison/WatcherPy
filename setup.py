@@ -8,7 +8,7 @@ with open(path.join(here, 'README'), encoding='utf-8') as f:
 
 setup(
     name ='eyeon',
-    version ='0.1.1',
+    version ='0.1.2',
     description ='Simple CLI tool to watch html and css files and reload the browser on change.',
     long_description = long_description,
     author ='John Morrison',
