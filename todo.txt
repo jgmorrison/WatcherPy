@@ -1,5 +1,3 @@
-*Remove the if __name__ in watcher.py **TEST**
-
 *Rename the app
 
 *Make Setup.py professional
