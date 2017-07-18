@@ -6,9 +6,15 @@ import time
 
 def get_files():
     files = []
-    for item in sys.argv[1:]:
-        files.append(os.path.abspath(item))
-    return files
+
+    if len(sys.argv) == 1:
+        print("You must provide files to watch.\n \
+            COMMAND: watcher [html file] [css file]\n")
+        sys.exit()
+    else:
+        for item in sys.argv[1:]:
+            files.append(os.path.abspath(item))
+        return files
 
 #reset watched file and its hash value to None.
 def reset():

@@ -1,5 +1,3 @@
-*Make compatible with Py2 and Py3
-
 *Remove the if __name__ in watcher.py **TEST**
 
 *Rename the app
